@@ -2,6 +2,7 @@ from typing import List
 
 def threeSum(nums: List[int]) -> List[List[int]]:
     #브루트 포스를 사용하면 O(n^3)로 타임아웃
+    #정렬된 배열을 투포인터기법으로 해결
     results = []
     nums.sort()
 
