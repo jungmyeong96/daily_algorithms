@@ -8,7 +8,7 @@ class ListNode:
     
 def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
     # 1.일반 연결리스트로 푸는 방식
-
+    # Runtime 43ms
     # ans = None
     # if not list1 and not list2:
     #     return ans
@@ -44,6 +44,7 @@ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) ->
     # return ans
 
     #2. 재귀적으로 푸는 방식 병합 정렬의 마지막조합과 비슷
+    # Runtime 34 ms
     # l1과 l2를 비교 후 항상 적은 값이 l1에 올 수 있도록 스왑
     # 적은 값 리스트인 l1가 None이 되면 나머지를 l1으로 취급
     if (not list1) or (list2 and list1.val > list2.val):
