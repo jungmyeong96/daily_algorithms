@@ -58,6 +58,10 @@ class MyCircularDeque:
         return self.len == self.k
 
 
+#사실상 배열로 푸는 것이 맞는 것 같습니다.
+#원형을 구현하는 이유는 뒤쪽 요소를 채우다 공간이 다 차면 tail과 head를 연결해 앞쪽의 빈공간을 활용하려는 의도인데,
+#연결리스트는 빈공간이라는 개념이 없기에 별 의미가 없게 느껴집니다.
+
 
 # Your MyCircularDeque object will be instantiated and called as such:
 # obj = MyCircularDeque(k)
