@@ -32,6 +32,8 @@ def canFinish(numCourses: int, prerequisites: List[List[int]]) -> bool:
         return True
     
     #키 값 기준 순환 구조 판별
+    #list()를 써줌으로 아래 에러 방지
+    #RuntimeError: dictionary changed size during iteration
     for x in list(graph):
         if not dfs(x):
             return False
