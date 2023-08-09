@@ -21,13 +21,13 @@ for i in range(N):
 stack = []
 min_dist = float('inf')
 
-def backtracking(idx):
+def backtracking(depth, idx):
     global min_dist
-    if len(stack) == M:
+    if depth == M:
         whole_dist = 0
         for h in house:
-            dist = 999999
-            for c in chicken:
+            dist = float('inf')
+            for c in stack:
                 dist = min(dist, abs(c[0] - h[0]) + abs(c[1] - h[1]))
             whole_dist += dist
         min_dist = min(whole_dist, min_dist)
@@ -36,11 +36,11 @@ def backtracking(idx):
     for i in range(idx, len(chicken)):
         if chicken[i] not in stack:
             stack.append(chicken[i])
-            backtracking(i + 1)
+            backtracking(depth + 1, i + 1)
             stack.pop()
     return
             
-backtracking(0)
+backtracking(0, 0)
 print(min_dist)
 
 
